@@ -11,10 +11,11 @@ sniffer:
   enable: true
   force-dns-mapping: false
   parse-pure-ip: true
-  override-destination: false
+  override-destination: true
   sniff:
     HTTP:
-      ports: [80, 8080]
+      ports: [80, 8080-8880]
+      override-destination: true
     TLS:
       ports: [443, 8443]
     QUIC:
@@ -80,7 +81,7 @@ rule-providers:
     type: http
     behavior: classical
     format: yaml
-    url: https://raw.githubusercontent.com/ryuu-restart/agent-route/release/mihomo/webrtc-guard.yaml
+    url: https://raw.githubusercontent.com/chenleicpp/agent-route/release/mihomo/webrtc-guard.yaml
     path: ./rules/sr-webrtc-guard.yaml
     interval: 86400
     proxy: PROXY
@@ -88,7 +89,7 @@ rule-providers:
     type: http
     behavior: domain
     format: yaml
-    url: https://raw.githubusercontent.com/ryuu-restart/agent-route/release/mihomo/private.yaml
+    url: https://raw.githubusercontent.com/chenleicpp/agent-route/release/mihomo/private.yaml
     path: ./rules/sr-private.yaml
     interval: 86400
     proxy: PROXY
@@ -96,7 +97,7 @@ rule-providers:
     type: http
     behavior: domain
     format: yaml
-    url: https://raw.githubusercontent.com/ryuu-restart/agent-route/release/mihomo/reject.yaml
+    url: https://raw.githubusercontent.com/chenleicpp/agent-route/release/mihomo/reject.yaml
     path: ./rules/sr-reject.yaml
     interval: 86400
     proxy: PROXY
@@ -104,7 +105,7 @@ rule-providers:
     type: http
     behavior: domain
     format: yaml
-    url: https://raw.githubusercontent.com/ryuu-restart/agent-route/release/mihomo/proxy.yaml
+    url: https://raw.githubusercontent.com/chenleicpp/agent-route/release/mihomo/proxy.yaml
     path: ./rules/sr-proxy.yaml
     interval: 86400
     proxy: PROXY
@@ -112,7 +113,7 @@ rule-providers:
     type: http
     behavior: domain
     format: yaml
-    url: https://raw.githubusercontent.com/ryuu-restart/agent-route/release/mihomo/direct.yaml
+    url: https://raw.githubusercontent.com/chenleicpp/agent-route/release/mihomo/direct.yaml
     path: ./rules/sr-direct.yaml
     interval: 86400
     proxy: PROXY
@@ -120,7 +121,7 @@ rule-providers:
     type: http
     behavior: ipcidr
     format: yaml
-    url: https://raw.githubusercontent.com/ryuu-restart/agent-route/release/mihomo/cn-ip.yaml
+    url: https://raw.githubusercontent.com/chenleicpp/agent-route/release/mihomo/cn-ip.yaml
     path: ./rules/sr-cn-ip.yaml
     interval: 86400
     proxy: PROXY
